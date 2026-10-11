@@ -1,3 +1,6 @@
 export function checkItemsExist(validItems, key) {
-  throw new Error("TODO: implement Exercise 4");
+    const filtered = validItems.map(x => x[key])
+    return function verify(arr){
+        return arr.every(value => filtered.includes(value[key]))
+    }
 }
